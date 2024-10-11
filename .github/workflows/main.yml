@@ -31,11 +31,11 @@ jobs:
 
     - name: Fetch and Compile Sing-Box Rules from ruleset
       run: |
-        git remote add ruleset https://github.com/217heidai/adblockfilters.git
+        git remote add ruleset https://github.com/privacy-protection-tools/anti-AD.git
         git fetch ruleset
-        git checkout ruleset/main -- rules
+        git checkout ruleset/master
         rm -rf *.txt
-        mv rules/* ./
+        mv anti-ad-easylist.txt ./
         rm -rf sing-box sing-box-1.10.0-beta.12-linux-amd64 sing-box.tar.gz
         find . -type f -name "*.srs" -exec rm -f {} \;
         find . -type f -name "*.txt" -exec bash -c '
@@ -46,7 +46,7 @@ jobs:
         fi
         ' _ {} \;
         shopt -s extglob
-        rm -rf !(adblockdns.txt|adblockdns.srs)
+        rm -rf !(anti-ad-easylist.txt|anti-ad-easylist.srs)
         git add .
         if git diff-index --quiet HEAD --; then
           echo "No changes to commit"
