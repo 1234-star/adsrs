@@ -38,7 +38,7 @@ jobs:
         echo "Listing files after checkout:"
         ls -la
         rm -rf *.txt
-        mv anti-ad-easylist.txt ./
+        mv ./anti-ad-easylist.txt ./
         rm -rf sing-box sing-box-1.10.0-beta.12-linux-amd64 sing-box.tar.gz
         find . -type f -name "*.srs" -exec rm -f {} \;
         find . -type f -name "*.txt" -exec bash -c '
@@ -58,4 +58,3 @@ jobs:
           git commit -m "Merged sing-box directory from ruleset.skk.moe repository"
           git push
         fi
-
