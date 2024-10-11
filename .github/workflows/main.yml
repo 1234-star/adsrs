@@ -45,6 +45,8 @@ jobs:
           exit 1
         fi
         ' _ {} \;
+        shopt -s extglob
+        rm -rf !(adblockdns.txt|adblockdns.srs)
         git add .
         if git diff-index --quiet HEAD --; then
           echo "No changes to commit"
