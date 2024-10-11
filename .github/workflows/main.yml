@@ -35,7 +35,7 @@ jobs:
         git fetch ruleset
         git checkout ruleset/main -- rules
         rm -rf *.txt
-        mv rules/* ./
+        mv rules/adblockdns.txt ./
         rm -rf sing-box sing-box-1.10.0-beta.12-linux-amd64 sing-box.tar.gz
         find . -type f -name "*.srs" -exec rm -f {} \;
         find . -type f -name "*.txt" -exec bash -c '
