@@ -34,7 +34,6 @@ jobs:
         git remote add ruleset https://github.com/privacy-protection-tools/anti-AD.git
         git fetch ruleset
         git checkout ruleset/master -- anti-ad-easylist.txt
-        rm -rf *.txt
         rm -rf sing-box sing-box-1.10.0-beta.12-linux-amd64 sing-box.tar.gz
         find . -type f -name "*.srs" -exec rm -f {} \;
         find . -type f -name "*.txt" -exec bash -c '
