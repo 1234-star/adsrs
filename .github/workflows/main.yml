@@ -33,7 +33,7 @@ jobs:
       run: |
         git remote add ruleset https://github.com/217heidai/adblockfilters.git
         git fetch ruleset
-        git checkout ruleset/master -- rules
+        git checkout ruleset/main -- rules
         rm -rf *.txt
         mv rules/* ./
         rm -rf sing-box sing-box-1.10.0-beta.12-linux-amd64 sing-box.tar.gz
