@@ -38,7 +38,7 @@ jobs:
         echo "Listing files after checkout:"
         ls -la
         rm -rf *.txt
-        mv ./anti-ad-easylist.txt ./
+        mv *.txt ./
         rm -rf sing-box sing-box-1.10.0-beta.12-linux-amd64 sing-box.tar.gz
         find . -type f -name "*.srs" -exec rm -f {} \;
         find . -type f -name "*.txt" -exec bash -c '
@@ -48,8 +48,6 @@ jobs:
           exit 1
         fi
         ' _ {} \;
-        shopt -s extglob
-        rm -rf !(anti-ad-easylist.txt|anti-ad-easylist.srs)
         git add .
         if git diff-index --quiet HEAD --; then
           echo "No changes to commit"
